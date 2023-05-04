@@ -2,48 +2,53 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
-  // const [enteredTitle, setEnteredTitle] = useState("");
-  // const [enteredAmount, setEnteredAmount] = useState("");
-  // const [enteredDate, setEnteredDate] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
-  const [userInput, setUserInput] = useState({
-    enteredTitle: "",
-    enteredAmount: "",
-    enteredDate: "",
-  });
-
-  const titleChangeHandler = (event) => {
-    setUserInput({
-      ...userInput, // this is a spread operator
-      enteredTitle: event.target.value,
-    });
-  };
-
-  const amountChangeHandler = (event) => {
-    setUserInput({
-      ...userInput, // this is a spread operator
-      enteredAmount: event.target.value,
-    });
-  };
-
-  const dateChangeHandler = (event) => {
-    setUserInput({
-      ...userInput, // this is a spread operator
-      enteredDate: event.target.value,
-    });
-  };
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: "",
+  //   enteredAmount: "",
+  //   enteredDate: "",
+  // });
 
   // const titleChangeHandler = (event) => {
-  //   setEnteredTitle(event.target.value);
+  //   WRONG WAY
+  //   setUserInput({
+  //     ...userInput, // this is a spread operator
+  //     enteredTitle: event.target.value,
+
+  //   RIGHT WAY
+  //   setUserInput((prevState) => {
+  //     return { ...prevState, enteredTitle: event.target.value };
+  //   });
   // };
 
   // const amountChangeHandler = (event) => {
-  //   setEnteredAmount(event.target.value);
+  //   setUserInput({
+  //     ...userInput, // this is a spread operator
+  //     enteredAmount: event.target.value,
+  //   });
   // };
 
   // const dateChangeHandler = (event) => {
-  //   setEnteredDate(event.target.value);
+  //   setUserInput({
+  //     ...userInput, // this is a spread operator
+  //     enteredDate: event.target.value,
+  //   });
   // };
+
+  const titleChangeHandler = (event) => {
+    setEnteredTitle(event.target.value);
+  };
+
+  const amountChangeHandler = (event) => {
+    setEnteredAmount(event.target.value);
+  };
+
+  const dateChangeHandler = (event) => {
+    setEnteredDate(event.target.value);
+  };
   return (
     <form>
       <div className="new-expense__controls">
