@@ -25,6 +25,11 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
+
   // THIS IS AN EXAMPLE OF JSX WORKING UNDER THE HOOD FOR THE SYNTAX BELOW
   // return React.createElement(
   //   "div",
@@ -36,7 +41,7 @@ const App = () => {
   // THIS IS AN EXAMPLE OF JSX SYNTAX
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
