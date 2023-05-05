@@ -8,38 +8,6 @@ const ExpenseForm = (props) => {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
-  // const [userInput, setUserInput] = useState({
-  //   enteredTitle: "",
-  //   enteredAmount: "",
-  //   enteredDate: "",
-  // });
-
-  // const titleChangeHandler = (event) => {
-  //   WRONG WAY
-  //   setUserInput({
-  //     ...userInput, // this is a spread operator
-  //     enteredTitle: event.target.value,
-
-  //   RIGHT WAY
-  //   setUserInput((prevState) => {
-  //     return { ...prevState, enteredTitle: event.target.value };
-  //   });
-  // };
-
-  // const amountChangeHandler = (event) => {
-  //   setUserInput({
-  //     ...userInput, // this is a spread operator
-  //     enteredAmount: event.target.value,
-  //   });
-  // };
-
-  // const dateChangeHandler = (event) => {
-  //   setUserInput({
-  //     ...userInput, // this is a spread operator
-  //     enteredDate: event.target.value,
-  //   });
-  // };
-
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
   };
@@ -100,6 +68,9 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
